@@ -1,7 +1,4 @@
-/**
-  * Created by camilo on 20.11.17.
-  */
-object Phonebook_playground {
+object Phonebook_Ex1 {
 
   trait ToJson {
     def toJson : String
@@ -12,7 +9,7 @@ object Phonebook_playground {
   }
 }
 
-import Phonebook_playground._
+import Phonebook_Ex1._
 
 object TestPlayground_1 extends App {
   val myRecord = Record("Camilo", "Morales")
@@ -22,7 +19,10 @@ object TestPlayground_1 extends App {
 object TestPlayground_2 extends App {
   val myRecord1 = Record("Camilo", "Morales")
   val myRecord2 = Record("Pedro", "Perez")
+
   val myListOfRecords: Seq[Record] = Seq(myRecord1, myRecord2)
+
+  //println(myListOfRecords.json)
   println(listToJson(myListOfRecords))
 
   def listToJson(records : Seq[ToJson]):String = {
